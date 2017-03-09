@@ -1,0 +1,37 @@
+------------------------
+ECMASCRIPT 6
+------------------------
+- Arrow functions
+  - Look familiar to anyone
+  - That is the new way of writing an anonymous function
+  - Saves typing
+  - JavaScript has a keyword called 'this' which can often cause confusion
+  - Arrow functions 'this' in a more intuitive way
+  - Example one
+    - JavaScript way of writing a class.  This is a person class.
+    - test in node, why doesn't it work?
+    - 'this' will actually refer to the Interval object
+- Embrace ES6 now, it's going to be standard in JavaScript shortly (get used to it)
+
+------------------------
+REACT
+------------------------
+- Facebook are dog fooding
+- They are willing to implement it in Facebook, Instagram, Whatsapp
+- Companies like Google
+
+- Airbnb
+  - Demo of site
+  - Was originally Ruby on Rails (MVC Framework)
+  - Multipage structure with React components
+  - Eventual transition to SPA
+- Atlassian
+  - Biggest tech company in Australia
+  - Originally in Django (python), MVT (model-view-template)
+  - Again, multipage being phased out for React
+  - Rebuilding HipChat in React over Angular (MVC) and Ember (Model-view-viewmodel)
+  - Have experience in Angular from previous employment, would pick React every time
+- Dropbox
+
+- Netflix
+  - Biggest video streaming service

@@ -32,6 +32,7 @@
 				<section>
 					<section>
 						<h1>Outline</h1>
+						<div class="fragment">ECMAScript 6</div>
 						<div class="fragment">Vanilla JavaScript</div>
 						<div class="fragment">jQuery</div>
 						<div class="fragment">Single Page Apps</div>
@@ -42,6 +43,157 @@
 					</section>
 
 					<section>
+						<h1>ECMAScript 6</h1>
+					</section>
+
+					<section>
+						<h1>Arrow Functions</h1>
+					</section>
+
+					<section>
+						<label>ES5</label>
+						<pre>
+							<code data-trim data-noescape>
+function(args, go, here) {
+
+}
+  					  </code>
+						</pre>
+
+						<div class="fragment">
+							<label>ES6</label>
+							<pre>
+								<code data-trim data-noescape>
+		(args, go, here) => {
+
+		}
+								</code>
+							</pre>
+						</div>
+					</section>
+
+					<section>
+						<label>ES5</label>
+						<pre>
+							<code data-trim data-noescape>
+function Person() {
+	this.age = 0;
+
+	setInterval(function() {
+		this.age++;
+	}, 1000);
+}
+
+var p = new Person();
+  					  </code>
+						</pre>
+					</section>
+
+					<section>
+						<label>ES5 bug fix</label>
+						<pre>
+							<code data-trim data-noescape>
+function Person() {
+	this.age = 0;
+
+	setInterval((function() {
+		this.age++;
+	})<u>.bind(this)</u>, 1000);
+}
+
+var p = new Person();
+  					  </code>
+							<code class="fragment" data-trim data-noescape>
+function Person() {
+	<u>var that = this;</u>
+	this.age = 0;
+
+	setInterval(function() {
+		<u>that.age++;</u>
+	}, 1000);
+}
+
+var p = new Person();
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<label>ES6</label>
+						<pre>
+							<code data-trim data-noescape>
+function Person() {
+	this.age = 0;
+	setInterval(() => this.age++, 1000);
+}
+
+var p = new Person();
+  					  </code>
+						</pre>
+					</section>
+
+					<section>
+						<h1>Destructuring Assignments</h1>
+					</section>
+
+					<section>
+						<label>ES5</label>
+						<pre>
+							<code data-trim data-noescape>
+var data = {
+	firstName: 'toby',
+	lastName: 'flemming',
+	email: 'tobyf93@hotmail.com',
+	gender: 'male',
+	...
+};
+
+var firstName = data.firstName;
+var lastName = data.lastName;
+  					  </code>
+						</pre>
+
+						<div class="fragment">
+							<label>ES6</label>
+							<pre>
+								<code data-trim data-noescape>
+	var { firstName, lastName } = data;
+	  					  </code>
+							</pre>
+						</div>
+					</section>
+
+					<section>
+						<label>ES6</label>
+						<pre>
+							<code data-trim data-noescape>
+var [a, b] = [1, 2];
+							</code>
+							<code class="fragment" data-trim data-noescape>
+[a, b] = [b, a];
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<img src="http://i.giphy.com/l3q2K5jinAlChoCLS.gif" width="400">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Outline</h1>
+						<div><strike>ECMAScript 6</strike></div>
+						<div>Vanilla JavaScript</div>
+						<div>jQuery</div>
+						<div>Single Page Apps</div>
+						<div>...</div>
+						<div>React</div>
+						<div>Redux</div>
+						<div>Webpack</div>
+					</section>
+
+					<section>
 						<h1>Vanilla JavaScript</h1>
 					</section>
 				</section>
@@ -49,6 +201,7 @@
 				<section>
 					<section>
 						<h1>Outline</h1>
+						<div><strike>ECMAScript 6</strike></div>
 						<div><strike>Vanilla JavaScript</strike></div>
 						<div>jQuery</div>
 						<div>Single Page Apps</div>
@@ -66,6 +219,7 @@
 				<section>
 					<section>
 						<h1>Outline</h1>
+						<div><strike>ECMAScript 6</strike></div>
 						<div><strike>Vanilla JavaScript</strike></div>
 						<div><strike>jQuery</strike></div>
 						<div>Single Page Apps</div>
@@ -83,6 +237,7 @@
 				<section>
 					<section>
 						<h1>Outline</h1>
+						<div><strike>ECMAScript 6</strike></div>
 						<div><strike>Vanilla JavaScript</strike></div>
 						<div><strike>jQuery</strike></div>
 						<div><strike>Single Page Apps</strike></div>
@@ -108,6 +263,7 @@
 							Dan Abramov
 						</div>
 					</section>
+
 					<section>
 						<h1>Who's Using It?</h1>
 						<ul>
@@ -119,11 +275,16 @@
 							<li class="fragment">William Hill Australia</li>
 						</ul>
 					</section>
+
+					<section>
+						<a href="https://jsfiddle.net/69z2wepo/72527/">Virtual DOM Demo</a>
+					</section>
 				</section>
 
 				<section>
 					<section>
 						<h1>Outline</h1>
+						<div><strike>ECMAScript 6</strike></div>
 						<div><strike>Vanilla JavaScript</strike></div>
 						<div><strike>jQuery</strike></div>
 						<div><strike>Single Page Apps</strike></div>
@@ -141,6 +302,7 @@
 				<section>
 					<section>
 						<h1>Outline</h1>
+						<div><strike>ECMAScript 6</strike></div>
 						<div><strike>Vanilla JavaScript</strike></div>
 						<div><strike>jQuery</strike></div>
 						<div><strike>Single Page Apps</strike></div>
@@ -170,7 +332,9 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'socket.io/socket.io.js', async: true },
+        	{ src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
 		</script>
