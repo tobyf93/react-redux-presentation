@@ -54,8 +54,8 @@
 						<label>ES5</label>
 						<pre>
 							<code data-trim data-noescape>
-function(args, go, here) {
-
+function(firstName, lastName) {
+	return firstName + " " + lastName;
 }
   					  </code>
 						</pre>
@@ -64,9 +64,12 @@ function(args, go, here) {
 							<label>ES6</label>
 							<pre>
 								<code data-trim data-noescape>
-		(args, go, here) => {
-
-		}
+(firstName, lastName) => {
+	return firstName + " " + lastName;
+}
+								</code>
+								<code class="fragment" data-trim data-noescape>
+(firstName, lastName) => firstName + " " + lastName;
 								</code>
 							</pre>
 						</div>
@@ -133,6 +136,46 @@ var p = new Person();
 					</section>
 
 					<section>
+						<h1>Classes</h1>
+					</section>
+
+					<section>
+						<label>ES5</label>
+						<pre>
+							<code data-trim data-noescape>
+	function Person() {
+		this.age = 0;
+	}
+
+	Person.prototype.grow = function() {
+		this.age++;
+	}
+
+	var p = new Person();
+  					  </code>
+						</pre>
+					</section>
+
+					<section>
+						<label>ES6</label>
+						<pre>
+							<code data-trim data-noescape>
+class Person {
+	constructor() {
+		this.age = 0;
+	}
+
+	grow() {
+		this.age++
+	}
+}
+
+var p = new Person();
+							</code>
+						</pre>
+					</section>
+
+					<section>
 						<h1>Destructuring Assignments</h1>
 					</section>
 
@@ -164,19 +207,52 @@ var lastName = data.lastName;
 					</section>
 
 					<section>
-						<label>ES6</label>
+						<label>ES5</label>
 						<pre>
 							<code data-trim data-noescape>
-var [a, b] = [1, 2];
-							</code>
-							<code class="fragment" data-trim data-noescape>
-[a, b] = [b, a];
+var list = [1, 2, 3];
+var a = list[0], b = list[2];
 							</code>
 						</pre>
+
+						<div class="fragment">
+							<label>ES6</label>
+							<pre>
+								<code data-trim data-noescape>
+var list = [1, 2, 3];
+var [a, , b] = list;
+								</code>
+							</pre>
+						</div>
+					</section>
+
+					<section>
+						<label>ES5</label>
+						<pre>
+							<code data-trim data-noescape>
+var a = 1, b = 2;
+var tmp;
+
+tmp = a;
+a = b;
+b = tmp;
+							</code>
+						</pre>
+
+						<div class="fragment">
+							<label>ES6</label>
+							<pre>
+								<code data-trim data-noescape>
+var a = 1, b = 2;
+[a, b] = [b, a];
+								</code>
+							</pre>
+						</div>
 					</section>
 
 					<section>
 						<img src="http://i.giphy.com/l3q2K5jinAlChoCLS.gif" width="400">
+						<div><a href="http://es6-features.org/#ClassDefinition">es6-features.org</a></div>
 					</section>
 				</section>
 
@@ -277,8 +353,13 @@ var [a, b] = [1, 2];
 					</section>
 
 					<section>
-						<a href="https://jsfiddle.net/69z2wepo/72527/">Virtual DOM Demo</a>
+						<img src="http://reactfordesigners.com/images/labs/jquery-style-vs-react-style.png">
 					</section>
+
+					<section>
+						<a href="https://jsfiddle.net/69z2wepo/73075/">Virtual DOM Demo</a>
+					</section>
+
 				</section>
 
 				<section>
@@ -296,6 +377,10 @@ var [a, b] = [1, 2];
 
 					<section>
 						<h1>Redux</h1>
+					</section>
+
+					<section>
+						<h1>Undo/Redo capabilities</h1>
 					</section>
 				</section>
 
@@ -315,6 +400,10 @@ var [a, b] = [1, 2];
 					<section>
 						<h1>Webpack</h1>
 					</section>
+				</section>
+
+				<section>
+					<a href="https://youtu.be/nYkdrAPrdcw?t=10m20s">Rethinking Web Apps at Facebook</a>
 				</section>
 			</div>
 		</div>

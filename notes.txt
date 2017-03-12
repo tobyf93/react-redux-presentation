@@ -11,14 +11,27 @@ ECMASCRIPT 6
     - JavaScript way of writing a class.  This is a person class.
     - test in node, why doesn't it work?
     - 'this' will actually refer to the Interval object
+- When i first came across ES6 - WTF is this shit?
 - Embrace ES6 now, it's going to be standard in JavaScript shortly (get used to it)
+
+------------------------
+JQUERY
+------------------------
+- Polyfills for DOM manipulation across browsers
+- DOM traversal
+- General utility functions
+
+------------------------
+SINGLE PAGE APPS
+------------------------
+- Gave code a lot more structure
+- Separation of concerns: MVC example
 
 ------------------------
 REACT
 ------------------------
-- Facebook are dog fooding
 - They are willing to implement it in Facebook, Instagram, Whatsapp
-- Companies like Google
+- Google, Angular, reluctant to follow suit
 
 - Airbnb
   - Demo of site
@@ -32,6 +45,16 @@ REACT
   - Rebuilding HipChat in React over Angular (MVC) and Ember (Model-view-viewmodel)
   - Have experience in Angular from previous employment, would pick React every time
 - Dropbox
-
 - Netflix
   - Biggest video streaming service
+  - Wanted to improve readability, complexity of app
+  - Had teams develop new UI's in jQuery, Backbone and React and measured performance
+  - React won
+  - Able to do a total rewrite in a few months
+  - Modularity meant better A/B testing
+  - Faster to bring people up to speed
+  - Using falcor for state management
+
+- jQuery style vs React style
+- render() doesn't necessarily mean DOM change
+- Virtual DOM
