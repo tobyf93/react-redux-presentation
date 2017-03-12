@@ -17,6 +17,7 @@ ECMASCRIPT 6
 ------------------------
 JQUERY
 ------------------------
+- The most popular JavaScript library deployed on the web
 - Polyfills for DOM manipulation across browsers
 - DOM traversal
 - General utility functions
