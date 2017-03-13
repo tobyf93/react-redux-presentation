@@ -209,8 +209,8 @@ var lastName = data.lastName;
 						<label>ES5</label>
 						<pre>
 							<code data-trim data-noescape>
-var list = [1, 2, 3];
-var a = list[0], b = list[2];
+var list = [1, 2, 3, 4, 5];
+var a = list[0], b = list.slice(1);
 							</code>
 						</pre>
 
@@ -218,8 +218,8 @@ var a = list[0], b = list[2];
 							<label>ES6</label>
 							<pre>
 								<code data-trim data-noescape>
-var list = [1, 2, 3];
-var [a, , b] = list;
+var list = [1, 2, 3, 4, 5];
+var [a, ...b] = list;
 								</code>
 							</pre>
 						</div>
@@ -243,10 +243,61 @@ b = tmp;
 							<pre>
 								<code data-trim data-noescape>
 var a = 1, b = 2;
-[a, b] = [b, a];
+var [a, b] = [b, a];
 								</code>
 							</pre>
 						</div>
+					</section>
+
+					<section>
+						<h1>Modules</h1>
+					</section>
+
+					<section>
+						<label>jQuery v3.1.1</label>
+						<pre>
+							<code>
+(function(global, factory) {
+	if (typeof module === "object" && typeof module.exports === "object") {
+		// Using nice modules
+	} else {
+		factory(global);
+	}
+})(window, function(window) {
+	...
+	window.jQuery = window.$ = jQuery;
+});
+							</code>
+							<code>
+&lt;script src=&quot;jQuery.js&quot;&gt;&lt;/script&gt;
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<label>Problems With This Approach</label>
+						<ul>
+							<li class="fragment">No control over exported variables</li>
+							<li class="fragment">Handling multiple files</li>
+							<li class="fragment">Can't keep track of dependencies</li>
+						</ul>
+					</section>
+
+					<section>
+						<pre>
+							<code>
+var name = 'Toby';
+
+export default () => console.log(`Hi!  My name is ${name}`)
+export var say = (text) => console.log(text);
+							</code>
+							<code class="fragment">
+import sayName, { say } from 'myModule';
+
+sayName();
+say('ES6 modules!');
+							</code>
+						</pre>
 					</section>
 
 					<section>
@@ -272,7 +323,7 @@ var a = 1, b = 2;
 					</section>
 
 					<section>
-						<h1>What Is It?</h1>
+						<div><label>What Is It?</label></div>
 						<ul>
 							<li class="fragment">Most popular JavaScript library</li>
 							<li class="fragment">Lightweight - 84KB minified</li>
@@ -283,7 +334,7 @@ var a = 1, b = 2;
 					</section>
 
 					<section>
-						<h1>Why Are We Using It?</h1>
+						<div><label>Why Are We Using It?</label></div>
 						<ul>
 							<li class="fragment">DOM traversal</li>
 							<li class="fragment">Event handling</li>
@@ -311,6 +362,19 @@ var a = 1, b = 2;
 					</section>
 
 					<section>
+						<div><label>What Does MVC Stand For?</label></div>
+						<ul>
+							<li class="fragment">Model</li>
+							<li class="fragment">View</li>
+							<li class="fragment">Controller</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="http://programminghelp.com/wp-content/uploads/2013/10/mvc_diagram.png">
+					</section>
+
+					<section>
 						<a href="https://youtu.be/nYkdrAPrdcw?t=10m20s">Rethinking Web Apps at Facebook</a>
 					</section>
 				</section>
@@ -332,7 +396,7 @@ var a = 1, b = 2;
 					</section>
 
 					<section>
-						<h1>What Is It?</h1>
+						<label>What Is It?</label>
 						<ul>
 							<li class="fragment">View library</li>
 							<li class="fragment">Released in March 2013 (currently v15.4.2)</li>
@@ -364,6 +428,13 @@ var a = 1, b = 2;
 						<a href="https://jsfiddle.net/69z2wepo/73075/">Virtual DOM Demo</a>
 					</section>
 
+					<section>
+						<a href="https://jsfiddle.net/69z2wepo/73162/">XSS Protection</a>
+					</section>
+
+					<section>
+						<a href="https://youtu.be/nYkdrAPrdcw?t=24m18s">Rethinking Web Apps at Facebook</a>
+					</section>
 				</section>
 
 				<section>
