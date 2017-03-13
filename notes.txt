@@ -1,26 +1,25 @@
 ------------------------
 ECMASCRIPT 6
 ------------------------
-- Arrow functions
-  - Look familiar to anyone
-  - That is the new way of writing an anonymous function
-  - Saves typing
-  - JavaScript has a keyword called 'this' which can often cause confusion
-  - Arrow functions 'this' in a more intuitive way
-  - Example one
-    - JavaScript way of writing a class.  This is a person class.
-    - test in node, why doesn't it work?
-    - 'this' will actually refer to the Interval object
-- When i first came across ES6 - WTF is this shit?
-- Embrace ES6 now, it's going to be standard in JavaScript shortly (get used to it)
+- Modules
+  - No control over variables.  window.$ takens on the jQuery library.  Other libraries may also use this...
+  - Handling multiple files
+    - Multiple script tags, multiple HTTP requests
+    - Concat javascript files, one HTTP request
+      - This is good but we can do better with Webpack
+  - Tracking library dependencies
+    - Have to sift through source to find 3rd party calls
+    - Library isn't modular with dependencies
 
 ------------------------
 JQUERY
 ------------------------
-- The most popular JavaScript library deployed on the web
-- Polyfills for DOM manipulation across browsers
-- DOM traversal
-- General utility functions
+- What
+  - Plugins attach to $.fn, just need to follow jQuery's chaining architecture
+  - JavaScript for designers
+    - Use of CSS selectors
+  - A trap
+    - Developers learning jQuery before they full understand JavaScript
 
 ------------------------
 SINGLE PAGE APPS
@@ -57,5 +56,32 @@ REACT
   - Using falcor for state management
 
 - jQuery style vs React style
-- render() doesn't necessarily mean DOM change
-- Virtual DOM
+  - render() doesn't necessarily mean DOM change
+  - Virtual DOM
+
+------------------------
+REDUX
+------------------------
+- Data flow
+  - Still uni-directional
+  - Single store without the need for dispatcher
+  - Store doesn't need to register any callbacks
+  - Very lightweight flux implementation
+    - naive redux is 99 LOC
+    - Without comments and sanity checks
+- Change Logs
+  - Console logging previous state, action, new state
+  - Proved tricky in flux with multiple stores representing different parts of state
+- Debugging
+  - Reducer is able to keep track of state over time
+  - Can replay actions to get app into certain state
+    - Can pinpoint when a bug is introduced
+  - Enables undo/redo features very easily
+- Hot Reloading
+  - Flux had stores managing data AND processing of actions
+  - Redux uses the reducer to modify state.
+  - Reducers can be hot reloaded without affecting app state
+- Re-hydration of store
+  - We know that redux has a single javascript object to represent state
+  - This can be serialized and sent to server
+  - Client can later re-hydrate store with server-side store state
